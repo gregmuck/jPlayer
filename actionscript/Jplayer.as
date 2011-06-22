@@ -32,6 +32,7 @@ package {
 	import flash.text.TextFormat;
 
 	import flash.events.KeyboardEvent;
+	import flash.events.MouseEvent;
 
 	import flash.display.Sprite;
 	import happyworm.jPlayer.*;
@@ -99,6 +100,9 @@ package {
 				myMp3Player.addEventListener(JplayerEvent.DEBUG_MSG, debugMsgHandler);
 				myMp4Player.addEventListener(JplayerEvent.DEBUG_MSG, debugMsgHandler);
 			}
+
+			// GWM: Add click event listener to the stage
+			this.stage.addEventListener(MouseEvent.CLICK, clickHandler);
 
 			// Delay init() because Firefox 3.5.7+ developed a bug with local testing in Firebug.
 			myInitTimer.addEventListener(TimerEvent.TIMER, init);
@@ -375,6 +379,18 @@ package {
 					}
 					break;
 			}
+		}
+		// GWM: Click event handler and mouse support function
+		private function clickHandler(e:MouseEvent):void {
+			ExternalInterface.call(jQuery, "jPlayerFlashEvent", JplayerEvent.JPLAYER_CLICK, extractMouseData(e));
+		}
+		private function extractMouseData(e:MouseEvent):Object {
+			var myEvent = {
+				version: JplayerStatus.VERSION,
+				x: e.localX,
+				y: e.localY
+			};
+			return myEvent;
 		}
 	}
 }

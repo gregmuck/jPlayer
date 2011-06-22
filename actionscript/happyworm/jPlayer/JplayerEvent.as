@@ -28,6 +28,7 @@ package happyworm.jPlayer {
 		public static const JPLAYER_ABORT:String = "jPlayer_abort"; // Not implemented
 		public static const JPLAYER_EMPTIED:String = "jPlayer_emptied"; // Not implemented
 		public static const JPLAYER_STALLED:String = "jPlayer_stalled"; // Not implemented
+		public static const JPLAYER_CLICK:String = "jPlayer_click"; // GWM: Mouse click event
 		public static const JPLAYER_PLAY:String = "jPlayer_play";
 		public static const JPLAYER_PAUSE:String = "jPlayer_pause";
 		public static const JPLAYER_LOADEDMETADATA:String = "jPlayer_loadedmetadata"; // MP3 has no equivilent

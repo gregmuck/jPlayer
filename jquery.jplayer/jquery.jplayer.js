@@ -100,6 +100,7 @@
 		abort: "jPlayer_abort",
 		emptied: "jPlayer_emptied",
 		stalled: "jPlayer_stalled",
+		click: "jPlayer_click",
 		play: "jPlayer_play",
 		pause: "jPlayer_pause",
 		loadedmetadata: "jPlayer_loadedmetadata",
@@ -125,6 +126,7 @@
 		// "error", // jPlayer uses internally before bubbling.
 		"emptied",
 		"stalled",
+		"click",
 		// "play", // jPlayer uses internally before bubbling.
 		// "pause", // jPlayer uses internally before bubbling.
 		"loadedmetadata",
@@ -244,7 +246,7 @@
 			muted: false,
 			wmode: "window", // Default Flash wmode is: window.  Valid wmode: transparent, opaque, direct, gpu
 			backgroundColor: "#000000", // To define the jPlayer div and Flash background color.
-			cssSelectorAncestor: "#jp_container_1",
+			cssSelectorAncestor: "#jp_interface_1",
 			cssSelector: { // * denotes properties that should only be required when video media type required. _cssSelector() would require changes to enable splitting these into Audio and Video defaults.
 				videoPlay: ".jp-video-play", // *
 				play: ".jp-play",
